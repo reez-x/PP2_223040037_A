@@ -1,6 +1,5 @@
-/Pertemuan9/Pertemuan9/target/
-/nbproject/private/
-/orm/nbproject/private/
-/Pertemuan9ant/nbproject/private/
-/Pertemuan9ant/build/
-/Pertemuan9ant/dist/
+
+/nbproject
+/orm
+build.xml
+manifest.mf
