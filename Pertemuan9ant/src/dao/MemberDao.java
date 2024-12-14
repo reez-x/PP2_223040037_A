@@ -5,7 +5,7 @@
 package dao;
 
 import java.util.List;
-import model. Member;
+import model.Member;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 /**
@@ -23,6 +23,7 @@ public class MemberDao {
         int result;
         try (SqlSession session = sqlSessionFactory.openSession()) { 
             result = session.insert("mapper.MemberMapper.insert", member);
+            session.commit(); 
         }    
         return result;
     }
@@ -31,6 +32,7 @@ public class MemberDao {
         int result;
         try (SqlSession session = sqlSessionFactory.openSession()) { 
             result = session.update("mapper.MemberMapper.update", member);
+            session.commit(); 
         }
         return result;
     }
@@ -49,6 +51,7 @@ public class MemberDao {
         List<Member> result;
         try (SqlSession session = sqlSessionFactory.openSession()) { 
             result = session.selectList("mapper.MemberMapper.findAll");
+            session.commit(); 
         }
         return result;
     }
